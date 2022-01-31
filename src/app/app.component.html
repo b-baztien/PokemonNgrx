@@ -1,0 +1,22 @@
+<div>limit: {{ limit$ | async }}</div>
+<div>offset: {{offset$ | async }}</div>
+
+
+<div>
+    <button (click)="insLimit(10)">increase limit</button>
+</div>
+<div>
+    <button (click)="insOffset(10)">increase Offset</button>
+</div>
+
+<div>
+    <button (click)="loadPokemon()">loadPokemon</button>
+</div>
+
+<div style="display: flex;">
+    <div *ngFor="let pokemon of pokemons$ | async ">
+        <div>{{pokemon.name}}</div>
+        <div><img [src]="pokemon.sprites.front_default" [alt]="pokemon.name"></div>
+    </div>
+
+</div>
